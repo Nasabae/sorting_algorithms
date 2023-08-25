@@ -1,12 +1,23 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
 
-#define INCREMENT 1
-#define DECREMENT -1
+/* Comparison direction macros for bitonic sort */
+#define UP 0
+#define DOWN 1
+
+/**
+ * enum bool - Enumeration of Boolean values.
+ * @false: Equals 0.
+ * @true: Equals 1.
+ */
+typedef enum bool
+{
+false = 0,
+true
+} bool;
 
 /**
  * struct listint_s - Doubly linked list node
@@ -22,21 +33,22 @@ struct listint_s *prev;
 struct listint_s *next;
 } listint_t;
 
-void print_array(const int *, size_t);
-void print_list(const listint_t *);
+/* Printing helper functions */
+void print_array(const int *array, size_t size);
+void print_list(const listint_t *list);
+
+/* Sorting algoritms */
 void ssa_bubble_sort(int *array, size_t size);
 void ssa_insertion_sort_list(listint_t **list);
 void ssa_selection_sort(int *array, size_t size);
 void ssa_quick_sort(int *array, size_t size);
-void ssa_quick_sort_rec(int *array, int lower, int higher, size_t size);
-int ssa_lomuto_partition(int *array, int lower, int higher, size_t size);
 void ssa_shell_sort(int *array, size_t size);
+void ssa_cocktail_sort_list(listint_t **list);
 void ssa_counting_sort(int *array, size_t size);
+void ssa_merge_sort(int *array, size_t size);
+void ssa_heap_sort(int *array, size_t size);
 void ssa_radix_sort(int *array, size_t size);
 void ssa_bitonic_sort(int *array, size_t size);
-void ssa_cocktail_sort_list(listint_t **list);
-void ssa_swap_nodes(listint_t **list, listint_t *node);
-listint_t *get_dlistint_lelem(listint_t *h);
-int ssa_getCantRep(int num);
+void ssa_quick_sort_hoare(int *array, size_t size);
 
-#endif
+#endif /* SORT_H */
