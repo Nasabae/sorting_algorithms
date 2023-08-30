@@ -45,6 +45,6 @@ struct deck_node_s *prev;
 struct deck_node_s *next;
 } deck_node_t;
 
-void ssa_sort_deck(deck_node_t **deck);
+void sort_deck(deck_node_t **deck);
 
 #endif /* DECK_H */
