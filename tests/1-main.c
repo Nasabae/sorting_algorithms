@@ -49,7 +49,7 @@ int main(void)
         return (1);
     print_list(list);
     printf("\n");
-    ssa_insertion_sort_list(&list);
+    insertion_sort_list(&list);
     printf("\n");
     print_list(list);
     return (0);
